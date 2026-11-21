@@ -1,0 +1,18 @@
+{
+  "slug": "living-doubt",
+  "language": "en",
+  "ticket_source": "linear",
+  "default_branch": "main",
+  "client": "Living Doubt",
+  "product": "Nourish",
+  "linear": {
+    "team_key": "JAM",
+    "org": "kodominio",
+    "project": "living-doubt"
+  },
+  "deploy": {
+    "platform": "vercel",
+    "team": "kodominio",
+    "projects": ["living-doubt"]
+  }
+}

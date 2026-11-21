@@ -1,0 +1,61 @@
+# The blueprint owns this file. An update of the blueprint replaces it: do not edit it.
+# The promotion to production. Only `.icm/_system/scripts/promote.sh run --tag <v*>` starts
+# it, on the operator's word. The contract is .icm/_system/features/uat.md.
+# Order: each production build of the tag is READY, then each
+# UAT project is promoted. A fault stops the run before production changes.
+name: promote
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: The release tag (v*) to promote
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: promote
+  cancel-in-progress: false
+defaults:
+  run:
+    shell: bash
+# The Node version is the one of .nvmrc. A repo with no .nvmrc gets this one.
+env:
+  NODE_DEFAULT: "22"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TAG: ${{ inputs.tag }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TEAM: ${{ vars.VERCEL_TEAM }}
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: bash .icm/_system/scripts/promote.sh verify --tag "$TAG"
+
+
+  promote:
+    needs: [verify]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TAG: ${{ inputs.tag }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_TEAM: ${{ vars.VERCEL_TEAM }}
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: bash .icm/_system/scripts/promote.sh ship --tag "$TAG"
+
