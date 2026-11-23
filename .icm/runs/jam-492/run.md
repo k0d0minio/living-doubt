@@ -5,5 +5,5 @@
 - link: https://linear.app/jamienisbet/issue/JAM-492/the-experience-page-the-story-of-nourish-sauna-ice-bath-contrast
 - branch: contact/jam-492-the-experience-page-the-story-of-nourish
 - lane: spine
-- pr: pending
+- pr: #4
 - started: 2026-11-23
