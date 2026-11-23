@@ -55,9 +55,7 @@ describe("one data file", () => {
     assert.ok(importsPrices(read("app/prices/page.tsx")));
   });
 
-  // Q1 of JAM-493 (J, 2026-11-23): "to do" until the home teaser of JAM-491 is merged.
-  // JAM-491 removes the `todo` option.
-  it("the home page reads @/lib/prices", { todo: "the home teaser comes in JAM-491" }, () => {
+  it("the home page reads @/lib/prices", () => {
     assert.ok(importsPrices(read("app/page.tsx")));
   });
 });
