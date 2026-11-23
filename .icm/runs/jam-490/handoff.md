@@ -20,11 +20,11 @@ Checked by the agent on a local dev server, on 2026-11-23:
 - The header stays at the top on scroll: met (header top 0 at scroll 1500, width 390).
 - The mobile menu: met. The button toggles `aria-expanded`, Escape closes it, a link closes it.
 - The Book button: the target logic is in `lib/booking.ts`, test `tests/booking.test.ts`.
-  Met when CI is green. With the address empty, the button went to `#contact` in the dev server.
+  Met: CI green at 489ea59. With the address empty, the button went to `#contact` in the dev server.
 - The footer: met. The company values are in `lib/company.ts`.
 - Title template and description: met (`Page not found · Nourish`, the default description).
   The Open Graph image is `app/opengraph-image.png` (the mark on ink, 1200 × 630).
-  `og:image:alt` did not show in the dev server: check it on the preview.
+  `og:image:alt` did not show in the dev server. The preview is behind Vercel login, so the agent could not read it: the operator checks it.
 - `/sitemap.xml` and `/robots.txt`: met (200). They use `NEXT_PUBLIC_SITE_URL`, then the
   Vercel production address, then `http://localhost:3000`.
 - The 404 page: met, with the header and the footer.
