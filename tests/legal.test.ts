@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, it } from "node:test";
-import { company, complaintsBook } from "../lib/company";
+import { company } from "../lib/company";
+import { complaintsBook } from "../lib/legal";
 
 describe("company", () => {
   it("has the identity of the company card", () => {
