@@ -35,7 +35,7 @@ The home teaser (JAM-491) reads the same file. A price change is one edit in tha
 - [ ] `/prices` shows each price of the ticket, in euro, in the format `€110` (no decimals, no space). (verify: agent)
 - [ ] `/prices` shows each condition of the memberships, the 12-month validity of the gift cards and the 24-hour cancellation rule. (verify: agent)
 - [ ] Each "Book", "Buy" and "Contact Max" button on `/prices` goes to the contact route of the shell. (verify: agent)
-- [ ] A test shows that the prices page reads `@/lib/prices`, and that the home page reads it when its teaser exists (Q1). (verify: CI)
+- [ ] A test shows that the prices page reads `@/lib/prices`, and the home page check is marked "to do" until the home teaser exists (Q1, J in chat 2026-11-23: the default). (verify: CI)
 - [ ] A test shows the values of `lib/prices.ts`: single €25 for 75 minutes, packs €110 and €200, memberships €72 and €128, group of 8. (verify: CI)
 - [ ] The change adds no payment code: no payment package, no checkout, no price form. (verify: CI)
 - [ ] The prices match `nourish 2.docx`, and Max accepts the single-session price of €25. (verify: operator)
