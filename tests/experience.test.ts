@@ -5,6 +5,8 @@ import { describe, it } from "node:test";
 // The page imports components of other tickets, so the test reads its source as text.
 const source = readFileSync(new URL("../app/experience/page.tsx", import.meta.url), "utf8");
 const text = source.replace(/\s+/g, " ");
+// The copy only: CSS classes (`object-[center_65%]`) are not page text.
+const copy = text.replace(/(className|position)=(\{`[^`]*`\}|"[^"]*")/g, "");
 
 describe("experience page", () => {
   it("sets a page title and a description", () => {
@@ -20,10 +22,10 @@ describe("experience page", () => {
   });
 
   it("makes none of the strong health claims", () => {
-    assert.doesNotMatch(text, /detox/i);
-    assert.doesNotMatch(text, /\d\s*%/);
-    assert.doesNotMatch(text, /weight|burn fat|calories/i);
-    assert.doesNotMatch(text, /\bheal(s|ing|ed)?\b|\bcures?\b|guarantee/i);
+    assert.doesNotMatch(copy, /detox/i);
+    assert.doesNotMatch(copy, /\d\s*%/);
+    assert.doesNotMatch(copy, /weight|burn fat|calories/i);
+    assert.doesNotMatch(copy, /\bheal(s|ing|ed)?\b|\bcures?\b|guarantee/i);
   });
 
   it("has no repeated paragraph", () => {
