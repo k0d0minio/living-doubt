@@ -54,7 +54,7 @@ export const faqs: Faq[] = [
     id: "cancellation",
     question: "What is the cancellation policy?",
     answer: [
-      "Please cancel at least 24 hours before your session, so that we can offer the space to someone else.",
+      `Please cancel at least ${prices.cancelHours} hours before your session, so that we can offer the space to someone else.`,
     ],
   },
   {

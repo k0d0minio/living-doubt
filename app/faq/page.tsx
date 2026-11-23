@@ -19,13 +19,13 @@ export default function FaqPage() {
         <div className="divide-y divide-wood/30 border-y border-wood/30">
           {faqs.map((faq) => (
             <details key={faq.id} id={faq.id} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-h3 text-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bronze [&::-webkit-details-marker]:hidden">
                 {faq.question}
                 <span aria-hidden="true" className="text-bronze transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <div className="mt-3 space-y-3 font-body text-ink-soft">
+              <div className="mt-3 space-y-3 font-body text-cream/80">
                 {faq.answer.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -53,7 +53,7 @@ export default function FaqPage() {
       </Section>
 
       <Section id="house-rules" label="House rules" title="Our house rules">
-        <ol className="list-decimal space-y-2 pl-6 font-body text-ink-soft marker:text-bronze">
+        <ol className="list-decimal space-y-2 pl-6 font-body text-cream/80 marker:text-bronze">
           {houseRules.map((rule) => (
             <li key={rule}>{rule}</li>
           ))}
