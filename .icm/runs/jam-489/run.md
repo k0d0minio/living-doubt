@@ -5,5 +5,5 @@
 - link: https://linear.app/jamienisbet/issue/JAM-489/brand-the-nourish-mark-as-svg-the-favicon-and-the-design-tokens
 - branch: contact/jam-489-brand-the-nourish-mark-as-svg-the-favicon
 - lane: spine
-- pr: pending
+- pr: #1
 - started: 2026-11-23
