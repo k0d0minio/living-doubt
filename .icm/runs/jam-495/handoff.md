@@ -2,16 +2,21 @@
 
 ## Next action
 
-<What the next session, or the operator, does first.>
+The operator answers Q1 on the HUD card, reads the spec and ticks Spec approved on
+https://github.com/k0d0minio/living-doubt/pull/6. Then the operator says `build JAM-495`.
 
 ## How to test
 
-<1 to 3 short sentences that can be said aloud: where to go on the preview, what to do, what the operator must see.>
+Open `/privacy` on the preview and read the controller, the data, the rights and the contact.
+Look at the footer of each page for the company identity and the complaints-book logo, and
+open the logo link.
 
 ## Blockers
 
-- none
+- Q1 waits for an answer (who adds the Livro de Reclamações logo file).
+- Spec approved is not ticked.
+- Build needs JAM-490 on `main` (the footer, `lib/site.ts`, `components/Section.tsx`).
 
 ## Do not touch
 
-- none
+- The footer and the layout: they belong to JAM-490.
