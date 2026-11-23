@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { contactAnchor } from "@/lib/booking";
 import { company } from "@/lib/company";
+import { complaintsBook } from "@/lib/legal";
 import { site } from "@/lib/site";
-
-const complaintsBookUrl = "https://www.livroreclamacoes.pt";
 
 /** The footer of each page. Its contact block is the target of the Book button. */
 export function Footer() {
@@ -54,8 +53,8 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <a href={complaintsBookUrl} className="underline-offset-4 hover:text-cream hover:underline">
-                Livro de Reclamações
+              <a href={complaintsBook.url} className="mt-2 inline-block opacity-80 hover:opacity-100">
+                <Image src={complaintsBook.logo} alt={complaintsBook.alt} width={131} height={24} />
               </a>
             </li>
           </ul>
