@@ -15,7 +15,7 @@ export function Header() {
       <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6 md:h-20">
         <Link href="/" className="flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-cream">
           <Image src="/brand/nourish-mark.svg" alt="" width={36} height={36} priority />
-          <span className="font-display text-xl font-light uppercase tracking-[0.3em] text-cream">{site.name}</span>
+          <span className="sr-only font-display text-xl font-light uppercase tracking-[0.3em] text-cream min-[480px]:not-sr-only">{site.name}</span>
         </Link>
         <nav aria-label="Main" className="hidden md:block">
           <ul className="flex items-center gap-8">
@@ -33,7 +33,7 @@ export function Header() {
           </ul>
         </nav>
         <div className="flex items-center gap-2">
-          <BookButton className="hidden sm:inline-flex" />
+          <BookButton />
           <MobileMenu />
         </div>
       </div>

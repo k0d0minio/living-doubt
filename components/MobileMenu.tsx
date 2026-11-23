@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BookButton } from "@/components/BookButton";
 import { nav } from "@/lib/site";
 
 /** The navigation on a narrow screen: a button that opens and closes a panel. */
@@ -54,7 +53,6 @@ export function MobileMenu() {
             </li>
           ))}
         </ul>
-        <BookButton className="mt-6 w-full" />
       </nav>
     </div>
   );

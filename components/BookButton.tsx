@@ -6,7 +6,7 @@ export function BookButton({ label = "Book a session", className = "" }: { label
   return (
     <a
       href={bookingHref(site.bookingUrl)}
-      className={`inline-flex items-center justify-center rounded-full bg-bronze px-5 py-2.5 font-display text-small font-medium uppercase tracking-[0.18em] text-ink transition-colors hover:bg-bronze-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream ${className}`}
+      className={`inline-flex items-center whitespace-nowrap justify-center rounded-full bg-bronze px-5 py-2.5 font-display text-small font-medium uppercase tracking-[0.18em] text-ink transition-colors hover:bg-bronze-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream ${className}`}
     >
       {label}
     </a>
