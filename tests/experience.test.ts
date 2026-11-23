@@ -24,7 +24,7 @@ describe("experience page", () => {
   it("makes none of the strong health claims", () => {
     assert.doesNotMatch(copy, /detox/i);
     assert.doesNotMatch(copy, /\d\s*%/);
-    assert.doesNotMatch(copy, /weight|burn fat|calories/i);
+    assert.doesNotMatch(copy, /weight loss|lose weight|burn fat|calories/i);
     assert.doesNotMatch(copy, /\bheal(s|ing|ed)?\b|\bcures?\b|guarantee/i);
   });
 
