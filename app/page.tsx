@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BookButton } from "@/components/BookButton";
 import { Section } from "@/components/Section";
 import { images } from "@/lib/images";
-import { prices } from "@/lib/prices";
+import { eur, prices } from "@/lib/prices";
 import { site } from "@/lib/site";
 
 const pillars = [
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Can I cancel?",
-    a: "Yes, up to 24 hours before your session.",
+    a: `Yes, up to ${prices.cancelHours} hours before your session.`,
   },
   {
     q: "Is there parking?",
@@ -141,24 +141,24 @@ export default function Home() {
         <dl className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="border-t border-wood pt-4">
             <dt className="text-label uppercase text-bronze">Single session</dt>
-            <dd className="mt-2 text-h3">€{prices.single.eur}</dd>
+            <dd className="mt-2 text-h3">{eur(prices.single.eur)}</dd>
             <dd className="text-small text-cream/70">{prices.single.minutes} minutes</dd>
           </div>
           <div className="border-t border-wood pt-4">
             <dt className="text-label uppercase text-bronze">Packs</dt>
             {prices.packs.map((pack) => (
               <dd key={pack.sessions} className="mt-2 text-body">
-                {pack.sessions} sessions · €{pack.eur}
+                {pack.sessions} sessions · {eur(pack.eur)}
               </dd>
             ))}
           </div>
           <div className="border-t border-wood pt-4">
             <dt className="text-label uppercase text-bronze">Memberships</dt>
-            <dd className="mt-2 text-h3">from €{fromMembership} / month</dd>
+            <dd className="mt-2 text-h3">from {eur(fromMembership)} / month</dd>
           </div>
           <div className="border-t border-wood pt-4">
             <dt className="text-label uppercase text-bronze">Gift cards</dt>
-            <dd className="mt-2 text-h3">from €{fromGiftCard}</dd>
+            <dd className="mt-2 text-h3">from {eur(fromGiftCard)}</dd>
           </div>
         </dl>
         <Link href="/prices" className={`${linkClass} mt-10`}>
