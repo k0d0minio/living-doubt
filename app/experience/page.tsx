@@ -63,7 +63,7 @@ function StepCard({ step }: { step: Step }) {
   );
 }
 
-function Photo({ image }: { image: (typeof images)["sauna"] }) {
+function Photo({ image, position = "object-center" }: { image: (typeof images)["sauna"]; position?: string }) {
   return (
     <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
       <Image
@@ -71,7 +71,7 @@ function Photo({ image }: { image: (typeof images)["sauna"] }) {
         alt={image.alt}
         fill
         sizes="(min-width: 768px) 50vw, 100vw"
-        className="object-cover object-left"
+        className={`object-cover ${position}`}
       />
     </div>
   );
@@ -149,7 +149,7 @@ export default function ExperiencePage() {
               plenty.
             </p>
           </div>
-          <Photo image={images.stove} />
+          <Photo image={images.stove} position="object-[center_65%]" />
         </div>
       </Section>
 
