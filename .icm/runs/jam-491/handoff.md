@@ -2,18 +2,20 @@
 
 ## Next action
 
-Wait until JAM-490 (`components/BookButton.tsx`, `components/Section.tsx`, `lib/site.ts`)
-and JAM-493 (`lib/prices.ts`) are on `main`. Then: `git fetch origin && git merge
-origin/main`, push, `gh pr ready 3`, `ci-status.sh 3 --watch`. Then check the `agent`
-criteria on the preview (steps 8 to 12 of Build).
+The operator tests the preview, ticks **Ready to merge** on
+https://github.com/k0d0minio/living-doubt/pull/3, then says `release JAM-491`.
 
-The pull request stays a draft until then (J, 2026-11-23): the page imports those files,
-so typecheck and build fail without them.
+## Criteria (2026-11-23, head 3f2fd65)
 
-## Criteria
-
-- Code done for all criteria. Not verified yet: CI (draft, imports missing), the
-  `agent` criteria on the preview, Lighthouse mobile ≥ 90.
+- Met, CI green: the photo list (5 entries, source, licence, placeholder); lint,
+  typecheck, test. The prices test for the home import is on (no `todo`).
+- Met, agent, on the local dev server (the preview needs a Vercel sign-in): the 8 sections
+  in order; 2 Book buttons, both `BookButton`; 4 images through `next/image`, each with alt
+  text; "from €72 / month" from `prices`; links to `/experience`, `/prices`, `/faq`; no map
+  and no street address.
+- Not verified: the layout at 375 px and 1280 px (see the review pack), and Lighthouse
+  performance on mobile ≥ 90. The preview is behind Vercel sign-in, and a dev server
+  gives no true score. The operator runs Lighthouse (mobile) on the preview.
 
 ## Build notes
 
@@ -30,7 +32,7 @@ pillars, the session, the prices, the FAQ, the location and the last Book button
 
 ## Blockers
 
-- JAM-490 and JAM-493 not on `main`.
+- The Ready to merge gate.
 
 ## Do not touch
 
