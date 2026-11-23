@@ -5,5 +5,5 @@
 - link: https://linear.app/jamienisbet/issue/JAM-491/home-page
 - branch: contact/jam-491-home-page
 - lane: spine
-- pr: pending
+- pr: #3
 - started: 2026-11-23
