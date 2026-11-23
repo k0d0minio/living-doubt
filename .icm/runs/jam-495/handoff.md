@@ -2,22 +2,27 @@
 
 ## Next action
 
-The operator answers Q1 on the HUD card, reads the spec and ticks Spec approved on
-https://github.com/k0d0minio/living-doubt/pull/6. Then the operator says `build JAM-495`.
+The operator tests the change on the preview of https://github.com/k0d0minio/living-doubt/pull/6,
+ticks Ready to merge, then says `release JAM-495`.
+
+## Criteria
+
+- `company` has the identity of the ticket, and a test checks each value: CI (`tests/legal.test.ts`).
+- `/privacy` shows the controller, what the site collects, the rights, the contact and the booking-provider note: met on the local dev server, 2026-11-23.
+- The footer shows the identity, links `/privacy`, and links https://www.livroreclamacoes.pt with the official logo: met on the local dev server, 2026-11-23 (the footer change: J, chat, 2026-11-23).
+- A test fails if the code reads or sets a cookie, or loads analytics or tracking: CI (`tests/legal.test.ts`).
+- No `Set-Cookie` on `/` and `/privacy`: met on the local dev server, 2026-11-23. Not read on the preview.
 
 ## How to test
 
-Open `/privacy` on the preview and read the controller, the data, the rights and the contact.
-Look at the footer of each page for the company identity and the complaints-book logo, and
-open the logo link.
+Open the preview and scroll to the footer: the company details, a Privacy link and the white
+Livro de Reclamações logo must show. Click the logo: it opens livroreclamacoes.pt. Click
+Privacy: the privacy policy opens.
 
 ## Blockers
 
-- The footer logo: `components/Footer.tsx` comes from JAM-490 and is not on `main`. When JAM-490 is on `main`, merge `main` into this branch and change the footer link "Livro de Reclamações" to show `complaintsBook.logo` from `lib/legal.ts` (J, chat, 2026-11-23: "add it to the footer").
-- This run depends on JAM-490 only (`lib/company.ts`, `lib/site.ts`, `components/Section.tsx`, `components/Footer.tsx`). JAM-490 does not depend on this run.
-
-- Build needs JAM-490 on `main` (the footer, `lib/site.ts`, `components/Section.tsx`).
+- none
 
 ## Do not touch
 
-- The footer and the layout: they belong to JAM-490.
+- `lib/company.ts` belongs to JAM-490.
