@@ -5,5 +5,5 @@
 - link: https://linear.app/jamienisbet/issue/JAM-493/prices-page-single-session-packs-memberships-gift-cards-group-hire
 - branch: contact/jam-493-prices-page-single-session-packs-memberships
 - lane: spine
-- pr: pending
+- pr: #7
 - started: 2026-11-23
