@@ -13,8 +13,9 @@ open the logo link.
 
 ## Blockers
 
-- Q1 waits for an answer (who adds the Livro de Reclamações logo file).
-- Spec approved is not ticked.
+- The footer logo: `components/Footer.tsx` comes from JAM-490 and is not on `main`. When JAM-490 is on `main`, merge `main` into this branch and change the footer link "Livro de Reclamações" to show `complaintsBook.logo` (J, chat, 2026-11-23: "add it to the footer").
+- JAM-490's footer imports `@/lib/company`, which only this run adds. If JAM-490 merges first, `main` does not build until this run merges.
+
 - Build needs JAM-490 on `main` (the footer, `lib/site.ts`, `components/Section.tsx`).
 
 ## Do not touch
