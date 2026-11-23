@@ -5,5 +5,5 @@
 - link: https://linear.app/jamienisbet/issue/JAM-494/faq-and-house-rules-page
 - branch: contact/jam-494-faq-and-house-rules-page
 - lane: spine
-- pr: pending
+- pr: #2
 - started: 2026-11-23
