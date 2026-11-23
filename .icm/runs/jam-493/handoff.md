@@ -2,9 +2,8 @@
 
 ## Next action
 
-When JAM-490 (PR #5) is on `main`: merge `origin/main` into this branch, `gh pr ready 7`,
-then `ci-status.sh 7 --watch` one time. On green, check the agent criteria on the preview,
-set `phase: release`, and show the gate card.
+The operator tests `/prices` on the preview, ticks **Ready to merge** on
+https://github.com/k0d0minio/living-doubt/pull/7, then says `release JAM-493`.
 
 ## Done in Build
 
@@ -14,17 +13,25 @@ set `phase: release`, and show the gate card.
 - `app/prices/page.tsx`: the six sections of the spec. Each button is `BookButton`.
 - `tests/prices.test.ts`: the values, the import of `@/lib/prices` by the prices page, the
   home check as `todo` (Q1, J in chat 2026-11-23: the default), and no payment code.
-- Criteria: none verified yet. A draft runs no CI, and the page imports files of JAM-490.
+
+## Acceptance criteria
+
+- Each price in the format `€110`: met (agent, local dev server; the preview needs a Vercel sign-in).
+- Each condition, the 12-month validity, the 24-hour rule: met (agent, local dev server).
+- Each Book, Buy and Contact Max button goes to the contact route (`#contact`, which is on the page): met (agent, local dev server).
+- The prices page reads `@/lib/prices`; the home check is `todo`: met (CI green at 1902031).
+- The values of `lib/prices.ts`: met (CI).
+- No payment code: met (CI).
+- The prices match `nourish 2.docx` and Max accepts €25 for one session: operator, on UAT.
 
 ## How to test
 
-Open `/prices` on the preview. Compare each price and condition with `nourish 2.docx`.
-Click a "Book" or "Buy" button: it goes to the contact route.
+Open `/prices` on the preview and compare each price and condition with `nourish 2.docx`.
+Click a "Buy" button: the page goes to the contact block.
 
 ## Blockers
 
-- JAM-490 is not on `main`: `components/BookButton.tsx` and `components/Section.tsx` do not
-  exist yet. Typecheck fails until then.
+- Ready to merge waits for the operator's test.
 
 ## Do not touch
 

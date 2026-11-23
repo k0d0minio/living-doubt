@@ -1,5 +1,5 @@
 # Status jam-493
 
-- phase: build
-- blocked: yes — waits for JAM-490 (BookButton, Section) on main; a draft runs no CI
+- phase: release
+- blocked: yes — waits for the operator's test and the tick of Ready to merge
 - updated: 2026-11-23
