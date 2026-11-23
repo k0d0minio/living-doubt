@@ -2,7 +2,7 @@
 
 ## Next action
 
-When JAM-490 (#5) and JAM-493 (#7) are on `main`: merge `origin/main` into this branch, mark #2 ready (`gh pr ready 2`), run `ci-status.sh 2 --watch`, then check the criteria and show the gate card.
+The operator tests `/faq` on the preview, ticks Ready to merge on https://github.com/k0d0minio/living-doubt/pull/2, then says `release JAM-494`.
 
 ## How to test
 
@@ -10,11 +10,16 @@ Open `/faq` on the preview. Press Tab to reach a question and press Enter: the a
 
 ## Criteria
 
-- Not verified yet. The pull request is a draft: CI does not run on a draft, and the page does not build before its imports are on `main`.
+- 13 questions and 7 numbered rules, corrected spelling: the local dev server shows 13 `<details>` and 7 `<li>` in the `<ol>`. The operator checks the text.
+- Native disclosure with keyboard: 13 `<details>` with `<summary>` on the local dev server. Not tried in a browser: the repo forbids the browser tool (router rule 9). Native `<summary>` takes Tab, Enter and Space.
+- One FAQPage JSON-LD with 13 Question entries and an acceptedAnswer each: met (CI test, and the local dev server HTML).
+- Hours, 8 people, 24 hours: met (CI test).
+- Lint, typecheck, test: met (CI GREEN at 6ed5ed1).
+- Schema.org validator: the operator checks it.
 
 ## Blockers
 
-- The page imports `components/Section.tsx` and `lib/site.ts` (`email`, `phone`, `whatsappUrl`, `hours`) of JAM-490 (#5), and `lib/prices.ts` (`single.minutes`, `groupHire.people`) of JAM-493 (#7). The pull request stays a draft until both are on `main`.
+- Ready to merge is not ticked.
 
 ## Do not touch
 
