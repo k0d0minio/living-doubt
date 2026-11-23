@@ -1,7 +1,7 @@
 # Spec: Site shell: header, navigation, footer, and the Book button to contact
 
 - ticket: JAM-490
-- touches: app/layout.tsx, app/not-found.tsx, app/sitemap.ts, app/robots.ts, app/opengraph-image.tsx, components/Header.tsx, components/MobileMenu.tsx, components/Footer.tsx, components/BookButton.tsx, components/Section.tsx, lib/site.ts, lib/booking.ts, tests/booking.test.ts
+- touches: lib/company.ts, app/layout.tsx, app/not-found.tsx, app/sitemap.ts, app/robots.ts, app/opengraph-image.tsx, components/Header.tsx, components/MobileMenu.tsx, components/Footer.tsx, components/BookButton.tsx, components/Section.tsx, lib/site.ts, lib/booking.ts, tests/booking.test.ts
 - complexity: standard
 
 ## Problem
@@ -46,7 +46,8 @@ shared contract.
 ## Out of scope
 
 - The page content of `/`, `/experience`, `/prices`, `/faq` and `/privacy`: their own tickets.
-- The colours, the fonts and the mark files: JAM-489. `lib/company.ts`: JAM-495.
+- The colours, the fonts and the mark files: JAM-489.
+- The logo of the Livro de Reclamações in the footer: JAM-495, after this pull request merges.
 - The booking service and its address: the booking ticket sets `NEXT_PUBLIC_BOOKING_URL`.
 - A `/contact` page.
 
