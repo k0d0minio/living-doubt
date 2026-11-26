@@ -13,6 +13,14 @@
   "deploy": {
     "platform": "vercel",
     "team": "kodominio",
-    "projects": ["living-doubt"]
+    "projects": [
+      "living-doubt"
+    ]
+  },
+  "requests": {
+    "store": "linear",
+    "linear_team": "JAM",
+    "linear_label": "source/client",
+    "linear_project": ""
   }
 }
